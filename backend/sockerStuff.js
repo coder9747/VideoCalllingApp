@@ -1,5 +1,7 @@
 const io = require("./server").io;
 
+let offers = []
+
 
 io.on("connection", (socket) => {
     socket.on("joinRoom", async (data) => {
@@ -8,11 +10,8 @@ io.on("connection", (socket) => {
             socket.join(data);
         }
         else if (numberOfPeronInRoom == 1) {
-            socket.to(data).emit("peerJoin");
+            socket.to(data).emit("peerJoin")
             socket.join(data);
         }
-    })
-    socket.on('offerFromPeer', (data) => {
-        console.log(data);
     })
 })
