@@ -18,7 +18,7 @@ const cert = fs.readFileSync("./certs/cert.crt");
 const expressServer = https.createServer({ key, cert }, app);
 
 
-const io = new Server(expressServer);
+const io = new Server(expressServer,{cors:"*"});
 
 const port = process.env.PORT || 20000;
 
