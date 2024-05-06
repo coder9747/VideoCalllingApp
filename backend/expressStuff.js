@@ -10,7 +10,6 @@ app.get("/generate-link", (req, res) => {
 
 app.get("/get-link-data/:token", (req, res) => {
     const { token } = req.params;
-    console.log(token);
     const payload = jwt.verify(token, process.env.PRIVATE_KEY);
     res.json(payload);
 })

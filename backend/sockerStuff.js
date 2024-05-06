@@ -12,4 +12,7 @@ io.on("connection", (socket) => {
             socket.join(data);
         }
     })
+    socket.on('offerFromPeer', (data) => {
+        console.log(data);
+    })
 })
