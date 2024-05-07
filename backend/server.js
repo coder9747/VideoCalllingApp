@@ -15,7 +15,7 @@ app.use(express.json());
 const key = fs.readFileSync("./certs/cert.key");
 const cert = fs.readFileSync("./certs/cert.crt");
 
-const expressServer = https.createServer({ key, cert }, app);
+const expressServer = https.createServer({ key, cert }, app,{cors:"*"});
 
 
 const io = new Server(expressServer,{cors:"*"});
